@@ -1,0 +1,41 @@
+create table product(
+pid int primary key,
+pname varchar(20),
+price double,
+qty int,
+cid int,
+sid int,
+Constraint fkcid foreign key (cid) references category(cid),
+Constraint fksid foreign key (sid) references salesman(sid)
+);
+
+create table salesman(
+sid int primary key,
+sname varchar(20),
+address varchar(100)
+);
+
+create table category(
+cid int primary key,
+cname varchar(20),
+description varchar(20)
+);
+
+
+insert into salesman values(1,'ashok','pune');
+insert into salesman values(2,'vinod','nagpur');
+insert into salesman values(3,'kumar','hyderabad');
+insert into salesman values(4,'neel','nagpur');
+insert into salesman values(5,'mahendra','vadodara');
+
+insert into category values(1,'lifestyle','clothes');
+insert into category values(2,'stationary','stationary cat');
+insert into category values(3,'food','snacks etc');
+insert into category values(4,'toys','toys cat');
+
+insert into product values(1,'hm',5000,10,1,1);
+insert into product values(2,'natraj',10,100,2,2);
+
+insert into product values(3,'balaji',10,100,3,3);
+insert into product values(4,'transformers',800,8,4,4);
+
